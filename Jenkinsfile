@@ -13,16 +13,20 @@ pipeline {
             }
             post {
                 success{
-                    mail to: "sleo93880@gmail.com",
-                    subject: "Test Status - Success",
-                    body: "Unit and Integration Tests were successful",
-                    attachLog: true
+                    emailext(
+                        subject: "Test Status - Success",
+                        body: "Unit and Integration Tests were successful",
+                        to: "sleo93880@gmail.com",
+                        attachLog: true
+                    )
                 }
                 failure{
-                    mail to: "sleo93880@gmail.com",
-                    subject: "Test Status - Failure",
-                    body: "Unit and Integration Tests were failed",
-                    attachLog: true
+                    emailext(
+                        subject: "Test Status - Failure",
+                        body: "Unit and Integration Tests were failed",
+                        to: "sleo93880@gmail.com",
+                        attachLog: true
+                    )
                 }
             }
         }
@@ -38,16 +42,20 @@ pipeline {
             }
             post {
                 success{
-                    mail to: "sleo93880@gmail.com",
-                    subject: "Security Scan Status - Success",
-                    body: "Security scan was successful",
-                    attachLog: true
+                    emailext(
+                        subject: "Security Scan Status - Success",
+                        body: "Security scan was successful",
+                        to: "sleo93880@gmail.com",
+                        attachLog: true
+                    )
                 }
                 failure{
-                    mail to: "sleo93880@gmail.com",
-                    subject: "Security Scan Status - Failure",
-                    body: "Security scan was failed",
-                    attachLog: true
+                    emailext(
+                        subject: "Security Scan Status - Failure",
+                        body: "Security scan was failed",
+                        to: "sleo93880@gmail.com",
+                        attachLog: true
+                    )
                 }
             }
         }
