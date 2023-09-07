@@ -15,13 +15,13 @@ pipeline {
                 success{
                     mail to: "sleo93880@gmail.com",
                     subject: "Test Status - Success",
-                    body: "Unit and Integration Tests were successful"
+                    body: "Unit and Integration Tests were successful",
                     attachLog: true
                 }
                 failure{
                     mail to: "sleo93880@gmail.com",
                     subject: "Test Status - Failure",
-                    body: "Unit and Integration Tests were failed"
+                    body: "Unit and Integration Tests were failed",
                     attachLog: true
                 }
             }
@@ -40,13 +40,13 @@ pipeline {
                 success{
                     mail to: "sleo93880@gmail.com",
                     subject: "Security Scan Status - Success",
-                    body: "Security scan was successful"
+                    body: "Security scan was successful",
                     attachLog: true
                 }
                 failure{
                     mail to: "sleo93880@gmail.com",
                     subject: "Security Scan Status - Failure",
-                    body: "Security scan was failed"
+                    body: "Security scan was failed",
                     attachLog: true
                 }
             }
