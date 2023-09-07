@@ -12,6 +12,7 @@ pipeline {
                 echo "Using Unit and Integration Test automation tool: JUnit"
             }
         }
+        
         stage('Code Analysis') {
             steps {
                 echo "Using Code Analysis tool: SonarQube"
