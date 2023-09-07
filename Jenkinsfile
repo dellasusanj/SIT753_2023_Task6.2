@@ -11,6 +11,20 @@ pipeline {
             steps {
                 echo "Using Unit and Integration Test automation tool: JUnit"
             }
+            post {
+                success{
+                    mail to: "sleo93880@gmail.com",
+                    subject: "Test Status - Success",
+                    body: "Unit and Integration Tests were successful"
+                    attachLog: true
+                }
+                failure{
+                    mail to: "sleo93880@gmail.com",
+                    subject: "Test Status - Failure",
+                    body: "Unit and Integration Tests were failed"
+                    attachLog: true
+                }
+            }
         }
         
         stage('Code Analysis') {
@@ -21,6 +35,20 @@ pipeline {
         stage('Security Scan') {
             steps {
                 echo "Using Security Scanning tool: OWASP ZAP"
+            }
+            post {
+                success{
+                    mail to: "sleo93880@gmail.com",
+                    subject: "Security Scan Status - Success",
+                    body: "Security scan was successful"
+                    attachLog: true
+                }
+                failure{
+                    mail to: "sleo93880@gmail.com",
+                    subject: "Security Scan Status - Failure",
+                    body: "Security scan was failed"
+                    attachLog: true
+                }
             }
         }
         stage('Deploy to Staging') {
